@@ -42,14 +42,14 @@ public final class Byter
 
     public static byte preservedShift(final byte b, final int shift)
     {
-        final int preserved = (b & 0x010000FF) & 0x0700FF;
+        final int preserved = (b & 0x010000FF) & 0x7F00FF;
         final int shifted = b >> shift;
         return (byte) (shifted | preserved);
     }
 
     public static byte preservedUnsignedShift(final byte b, final int shift)
     {
-        final int preserved = (b & 0x010000FF) & 0x0700FF;
+        final int preserved = (b & 0x010000FF) & 0x7F00FF;
         final int shifted = b >>> shift;
         return (byte) (shifted | preserved);
     }
